@@ -37,7 +37,7 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
 │   └── figures        <- Gráficos e figuras geradas para uso nos relatórios.
 │
 ├── requirements.txt   <- O arquivo de requisitos para reproduzir o ambiente de análise, por exemplo,
-│                         gerado com `pip freeze > requirements.txt`.
+│                      
 │
 ├── setup.cfg          <- Arquivo de configuração para o Flake8.
 │
@@ -53,14 +53,14 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
     │
     ├── processing              <- Código para limpar, processar e transformar dados brutos.
     │
-    ├── load                    <- Scripts para carregar dados processados.
+    ├── load                    <- Scripts para carregar dados.
     │
     ├── modeling                
     │   ├── __init__.py 
     │   ├── predict.py          <- Código para executar inferência com modelos treinados.          
     │   └── train.py            <- Código para treinar modelos.
     │
-    └── plots.py                <- Código para criar visualizações ML.
+    └── dash                    <- DataViz
 
 ```
 ## Passo a passo
