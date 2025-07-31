@@ -56,6 +56,32 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
     │
     └── plots.py                <- Code to create visualizations
 ```
+## Passo a passo
+
+Siga os passos abaixo para configurar o ambiente de desenvolvimento e instalar as dependências do projeto.
+
+### 1. Criar o Ambiente Virtual
+
+Crie um ambiente virtual para isolar as dependências do projeto.
+
+```bash
+python -m venv .venv
+```
+### 2. Atualizar pip 
+
+Realizar upgrade no pip
+
+```bash
+python.exe -m pip install --upgrade pip     
+```
+
+### 3. Instalar Requirements
+
+Instalar bibliotecas necesárias
+
+```bash
+pip install -r requirements.txt       
+```
 
 --------
 
