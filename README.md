@@ -90,5 +90,12 @@ Instalar bibliotecas necesárias
 pip install -r requirements.txt       
 ```
 
+### 4. Ativando Playwright
+
+```bash
+playwright install
+```
+
+
 --------
 
