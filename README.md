@@ -60,7 +60,7 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
     │   ├── predict.py          <- Código para executar inferência com modelos treinados.          
     │   └── train.py            <- Código para treinar modelos.
     │
-    └── dash                    <- DataViz
+    └── front                    <- Frontend, Dataviz
 
 ```
 ## Passo a passo
