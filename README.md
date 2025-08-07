@@ -8,7 +8,14 @@
 
 Projeto de estágio focado na criação de uma ferramenta de análise para identificar anomalias, dados suspeitos e potenciais riscos que possam impactar a integridade e a reputação da empresa
 
-## Project Organization
+## Arquitetura
+<img width="1552" height="824" alt="image" src="https://github.com/user-attachments/assets/57ddd75f-5ef1-461d-9fa9-ddb2fa56f73a" />
+
+
+
+
+
+## Estrutura
 
 ```
 ├── LICENSE            <- Licença de código aberto, caso uma seja escolhida.
