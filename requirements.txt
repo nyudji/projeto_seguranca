@@ -16,4 +16,6 @@ typer
 playwright
 requests
 selenium
+python-dotenv
+loguru
 -e .

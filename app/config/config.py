@@ -7,19 +7,19 @@ from loguru import logger
 load_dotenv()
 
 # Paths
-PROJ_ROOT = Path(__file__).resolve().parents[1]
-logger.info(f"PROJ_ROOT path is: {PROJ_ROOT}")
+RAIZ_PROJETO = Path(__file__).resolve().parents[1]
+logger.info(f"RAIZ_PROJETO está na : {RAIZ_PROJETO}")
 
-DATA_DIR = PROJ_ROOT / "data"
-RAW_DATA_DIR = DATA_DIR / "raw"
-INTERIM_DATA_DIR = DATA_DIR / "interim"
-PROCESSED_DATA_DIR = DATA_DIR / "processed"
-EXTERNAL_DATA_DIR = DATA_DIR / "external"
+DIRETORIO_DADOS = RAIZ_PROJETO  / "data"
+DIRETORIO_DADOS_BRUTOS = DIRETORIO_DADOS / "bruto"
+DIRETORIO_DADOS_INTERMEDIARIOS = DIRETORIO_DADOS / "interno"
+DIRETORIO_DADOS_PROCESSADOS = DIRETORIO_DADOS / "tratado"
+DIRETORIO_DADOS_EXTERNOS = DIRETORIO_DADOS / "externo"
 
-MODELS_DIR = PROJ_ROOT / "models"
+DIRETORIO_MODELOS = RAIZ_PROJETO / "modelos"
 
-REPORTS_DIR = PROJ_ROOT / "reports"
-FIGURES_DIR = REPORTS_DIR / "figures"
+DIRETORIO_RELATORIOS = RAIZ_PROJETO / "relatorios"
+DIRETORIO_FIGURAS = DIRETORIO_RELATORIOS  / "figuras"
 
 # If tqdm is installed, configure loguru with tqdm.write
 # https://github.com/Delgan/loguru/issues/135

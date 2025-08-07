@@ -14,15 +14,10 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
 ├── LICENSE            <- Licença de código aberto, caso uma seja escolhida.
 ├── Makefile           <- Arquivo com comandos úteis, como `make data` ou `make train`.
 ├── README.md          <- O arquivo de introdução principal para desenvolvedores que usam este projeto.
-├── data
-│   ├── external       <- Dados de fontes externas (APIs, bancos de dados, etc.).
-│   ├── interim        <- Dados intermediários que já foram transformados.
-│   ├── processed      <- Conjuntos de dados finais e padronizados para modelagem.
-│   └── raw            <- O despejo de dados original e imutável.
 │
 ├── docs               <- Um projeto padrão do MkDocs; veja www.mkdocs.org para detalhes.
 │
-├── models             <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos.
+├── modelos             <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos.
 │
 ├── notebooks          <- Notebooks Jupyter. A convenção de nomeação é um número (para ordenação),
 │                         as iniciais do criador e uma breve descrição, por exemplo:
@@ -33,8 +28,8 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
 │
 ├── references         <- Dicionários de dados, manuais e outros materiais explicativos.
 │
-├── reports            <- Análises geradas em HTML, PDF, LaTeX, etc.
-│   └── figures        <- Gráficos e figuras geradas para uso nos relatórios.
+├── relatorios            <- Análises geradas em HTML, PDF, LaTeX, etc.
+│   └── figuras        <- Gráficos e figuras geradas para uso nos relatórios.
 │
 ├── requirements.txt   <- O arquivo de requisitos para reproduzir o ambiente de análise, por exemplo,
 │                      
@@ -46,6 +41,12 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
     ├── __init__.py             <- Transforma 'app' em um módulo Python.
     │
     ├── config                  <- Armazena variáveis úteis e configurações.
+    │
+    ├── dados
+    │    ├── externo       <- Dados de fontes externas (APIs, bancos de dados, etc.).
+    │    ├── interno        <- Dados intermediários que já foram transformados.
+    │    ├── tratado      <- Conjuntos de dados finais e padronizados para modelagem.
+    │    └── bruto            <- O despejo de dados original e imutável.
     │
     ├── db                      <- Configurações e funcoes banco de dados.
     │
