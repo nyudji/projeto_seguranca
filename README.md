@@ -50,11 +50,10 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
     │
     ├── db                      <- Configurações e funcoes banco de dados.
     │
-    ├── extract                 <- Scripts para extrair dados de diferentes fontes.
-    │
-    ├── processing              <- Código para limpar, processar e transformar dados brutos.
-    │
-    ├── load                    <- Scripts para carregar dados.
+    ├── pipeline
+    │       ├── extract                 <- Scripts para extrair dados de diferentes fontes.
+    │       ├── processing              <- Código para limpar, processar e transformar dados brutos.
+    │       ├── load                    <- Scripts para carregar dados.
     │
     ├── modeling                
     │   ├── __init__.py 
