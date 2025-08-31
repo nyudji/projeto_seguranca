@@ -33,7 +33,7 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
 ├── pyproject.toml     <- Arquivo de configuração do projeto com metadados do pacote e configurações para
 │                         ferramentas como o Black e o Ruff.
 │
-├── references         <- Dicionários de dados, manuais e outros materiais explicativos.
+├── referencias         <- Dicionários de dados, manuais e outros materiais explicativos.
 │
 ├── relatorios            <- Análises geradas em HTML, PDF, LaTeX, etc.
 │   └── figuras        <- Gráficos e figuras geradas para uso nos relatórios.
