@@ -1,0 +1,283 @@
+{
+    "funcionario": {
+        "cpf": "2323",
+        "nome": "Mario Andrade da Silva"
+    },
+    "processos": [
+        {
+            "numero_processo": "0016496-43.2003.8.26.0053",
+            "grau": 1,
+            "classe": "Procedimento Comum Cível",
+            "assunto": "Pagamento",
+            "data_distribuicao": "01/08/2003 - Unidade de Processamento das Execuções contra a Fazenda Pública da Comarca da Capital - UPEFAZ",
+            "nome_parte": "MARIO SÉRGIO ASSUMPÇÃO DE ANDRADE E SILVA (herdeiro de Vania Assumpção de Andrada e Silva)",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Procedimento Comum Cível com assunto Pagamento."
+        },
+        {
+            "numero_processo": "1098678-29.2020.8.26.0100",
+            "grau": 1,
+            "classe": "Usucapião",
+            "assunto": "Usucapião Extraordinária",
+            "data_distribuicao": "20/10/2020 - 1ª Vara de Registros Públicos",
+            "nome_parte": "Mário de Andrade da Silva e s/m Helena Dier ( ou Bier) da Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Usucapião com assunto Usucapião Extraordinária."
+        },
+        {
+            "numero_processo": "1112810-62.2018.8.26.0100",
+            "grau": 1,
+            "classe": "Usucapião",
+            "assunto": "Usucapião Especial (Constitucional)",
+            "data_distribuicao": "31/10/2018 - 1ª Vara de Registros Públicos",
+            "nome_parte": "Mário da Silva, herdeiro de Marco Antônio da Silva e Benta de Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Usucapião com assunto Usucapião Especial (Constitucional)."
+        },
+        {
+            "numero_processo": "0132346-91.2009.8.26.0100",
+            "grau": 1,
+            "classe": "Procedimento Comum Cível",
+            "assunto": "Indenização por Dano Material",
+            "data_distribuicao": "30/03/2009 - 22ª Vara Cível",
+            "nome_parte": "Mario Sergio de Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Procedimento Comum Cível com assunto Indenização por Dano Material."
+        },
+        {
+            "numero_processo": "0049477-66.2005.8.26.0050",
+            "grau": 1,
+            "classe": "Ação Penal - Procedimento Ordinário",
+            "assunto": "Roubo",
+            "data_distribuicao": "05/07/2005 - 27ª Vara Criminal",
+            "nome_parte": "Mario José Ferreira de Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Ação Penal - Procedimento Ordinário com assunto Roubo."
+        },
+        {
+            "numero_processo": "0048047-21.2001.8.26.0050",
+            "grau": 1,
+            "classe": "Ação Penal - Procedimento Ordinário",
+            "assunto": "Atentado Violento ao Pudor",
+            "data_distribuicao": "03/07/2001 - 13ª Vara Criminal",
+            "nome_parte": "Mario Marcos Andrade da Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Ação Penal - Procedimento Ordinário com assunto Atentado Violento ao Pudor."
+        },
+        {
+            "numero_processo": "0091925-69.1996.8.26.0050",
+            "grau": 1,
+            "classe": "Ação Penal - Procedimento Ordinário",
+            "assunto": "Crimes do Sistema Nacional de Armas",
+            "data_distribuicao": "06/12/1996 - 25ª Vara Criminal",
+            "nome_parte": "Mario Carvalho Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 5,
+            "descricao": "Processo de Ação Penal - Procedimento Ordinário com assunto Crimes do Sistema Nacional de Armas."
+        },
+        {
+            "numero_processo": "0042875-79.1993.8.26.0050",
+            "grau": 1,
+            "classe": "Ação Penal - Procedimento Sumário",
+            "assunto": "Contravenções Penais",
+            "data_distribuicao": "31/05/1993 - 8ª Vara Criminal",
+            "nome_parte": "MARIO CARVALHO ANDRADE SILVA",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Ação Penal - Procedimento Sumário com assunto Contravenções Penais."
+        },
+        {
+            "numero_processo": "1521065-61.2024.8.26.0090",
+            "grau": 1,
+            "classe": "Execução Fiscal",
+            "assunto": "IPTU/ Imposto Predial e Territorial Urbano",
+            "data_distribuicao": "24/04/2024 - Vara das Execuções Fiscais Municipais",
+            "nome_parte": "Mario Sergio Andrade Ferreira da Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Execução Fiscal com assunto IPTU/ Imposto Predial e Territorial Urbano."
+        },
+        {
+            "numero_processo": "1652142-04.2021.8.26.0090",
+            "grau": 1,
+            "classe": "Execução Fiscal",
+            "assunto": "IPTU/ Imposto Predial e Territorial Urbano",
+            "data_distribuicao": "08/09/2021 - Vara das Execuções Fiscais Municipais",
+            "nome_parte": "Mario Sergio Andrade Ferreira da Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Execução Fiscal com assunto IPTU/ Imposto Predial e Territorial Urbano."
+        },
+        {
+            "numero_processo": "1002147-88.2022.8.26.0073",
+            "grau": 1,
+            "classe": "Usucapião",
+            "assunto": "Usucapião Extraordinária",
+            "data_distribuicao": "20/04/2022 - 2ª Vara Cível",
+            "nome_parte": "Mario Sergio de Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Usucapião com assunto Usucapião Extraordinária."
+        },
+        {
+            "numero_processo": "1000665-76.2020.8.26.0073",
+            "grau": 1,
+            "classe": "Requerimento de Reintegração de Posse",
+            "assunto": "DIREITO PROCESSUAL CIVIL E DO TRABALHO-Liquidação / Cumprimento / Execução-Obrigação de Entregar-Requerimento de Reintegração de Posse",
+            "data_distribuicao": "19/02/2020 - 1ª Vara Cível",
+            "nome_parte": "Mario Sergio de Andrade Silva - herdeiro de Nadir de Andrade",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Requerimento de Reintegração de Posse com assunto DIREITO PROCESSUAL CIVIL E DO TRABALHO-Liquidação / Cumprimento / Execução-Obrigação de Entregar-Requerimento de Reintegração de Posse."
+        },
+        {
+            "numero_processo": "0006150-46.1998.8.26.0073",
+            "grau": 1,
+            "classe": "Outros Feitos não Especificados",
+            "assunto": "",
+            "data_distribuicao": "16/02/1998 - Vara do Juizado Especial Cível e Criminal",
+            "nome_parte": "Mario Sergio Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Outros Feitos não Especificados com assunto ."
+        },
+        {
+            "numero_processo": "1000520-75.2015.8.26.0176",
+            "grau": 1,
+            "classe": "Monitória",
+            "assunto": "Pagamento",
+            "data_distribuicao": "03/11/2015 - 3ª Vara Judicial",
+            "nome_parte": "",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Monitória com assunto Pagamento."
+        },
+        {
+            "numero_processo": "0011181-64.2015.8.26.0198",
+            "grau": 1,
+            "classe": "Ação Penal - Procedimento Ordinário",
+            "assunto": "Furto",
+            "data_distribuicao": "23/10/2015 - Vara Criminal",
+            "nome_parte": "Mario José Ferreira de Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Ação Penal - Procedimento Ordinário com assunto Furto."
+        },
+        {
+            "numero_processo": "1011287-84.2022.8.26.0223",
+            "grau": 1,
+            "classe": "Carta Precatória Cível",
+            "assunto": "Penhora / Depósito / Avaliação",
+            "data_distribuicao": "02/08/2022 - 1ª Vara Cível",
+            "nome_parte": "Mario Andrade da Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Carta Precatória Cível com assunto Penhora / Depósito / Avaliação."
+        },
+        {
+            "numero_processo": "1549745-23.2016.8.26.0224",
+            "grau": 1,
+            "classe": "Execução Fiscal",
+            "assunto": "DIREITO TRIBUTÁRIO",
+            "data_distribuicao": "22/02/2016 - SETOR DE EXECUÇÕES FISCAIS DA COMARCA DE GUARULHOS",
+            "nome_parte": "Mario de Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Execução Fiscal com assunto DIREITO TRIBUTÁRIO."
+        },
+        {
+            "numero_processo": "0514236-29.2008.8.26.0224",
+            "grau": 1,
+            "classe": "Execução Fiscal",
+            "assunto": "",
+            "data_distribuicao": "29/12/2008 - SETOR DE EXECUÇÕES FISCAIS DA COMARCA DE GUARULHOS",
+            "nome_parte": "Mario de Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Execução Fiscal com assunto ."
+        },
+        {
+            "numero_processo": "1003979-23.2015.8.26.0229",
+            "grau": 1,
+            "classe": "Procedimento Comum Cível",
+            "assunto": "Interpretação / Revisão de Contrato",
+            "data_distribuicao": "11/12/2015 - 3ª Vara Cível",
+            "nome_parte": "",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Procedimento Comum Cível com assunto Interpretação / Revisão de Contrato."
+        },
+        {
+            "numero_processo": "0009501-40.2011.8.26.0568",
+            "grau": 1,
+            "classe": "Ação Penal - Procedimento Ordinário",
+            "assunto": "Roubo",
+            "data_distribuicao": "03/10/2011 - Vara Criminal",
+            "nome_parte": "Mario de Andrade Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Ação Penal - Procedimento Ordinário com assunto Roubo."
+        },
+        {
+            "numero_processo": "0013332-14.2002.8.26.0568",
+            "grau": 1,
+            "classe": "Ação Penal - Procedimento Ordinário",
+            "assunto": "Roubo",
+            "data_distribuicao": "27/01/2006 - 1ª Vara Cível",
+            "nome_parte": "Mario de Andrade Silva - Indiciado Em 28.06.2002",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Ação Penal - Procedimento Ordinário com assunto Roubo."
+        },
+        {
+            "numero_processo": "1022593-24.2023.8.26.0576",
+            "grau": 1,
+            "classe": "Procedimento Comum Cível",
+            "assunto": "Indenização por Dano Material",
+            "data_distribuicao": "08/05/2023 - 3ª Vara Cível",
+            "nome_parte": "Mário Lucas Andrade da Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Procedimento Comum Cível com assunto Indenização por Dano Material."
+        },
+        {
+            "numero_processo": "1043443-85.2017.8.26.0002",
+            "grau": 1,
+            "classe": "Procedimento Comum Cível",
+            "assunto": "Locação de Imóvel",
+            "data_distribuicao": "17/08/2017 - 14ª Vara Cível",
+            "nome_parte": "",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Procedimento Comum Cível com assunto Locação de Imóvel."
+        },
+        {
+            "numero_processo": "1000346-51.2016.8.26.0008",
+            "grau": 1,
+            "classe": "Procedimento Comum Cível",
+            "assunto": "Responsabilidade do Fornecedor",
+            "data_distribuicao": "15/01/2016 - 1ª Vara Cível",
+            "nome_parte": "Mario Sérgio Assumpção de Andrade e Silva",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Procedimento Comum Cível com assunto Responsabilidade do Fornecedor."
+        },
+        {
+            "numero_processo": "1500154-42.2022.8.26.0011",
+            "grau": 1,
+            "classe": "Ação Penal - Procedimento Sumário",
+            "assunto": "Ameaça",
+            "data_distribuicao": "25/02/2022 - 1ª Vara Criminal",
+            "nome_parte": "ANTONIO MARIO ANDRADE DA SILVA",
+            "fonte": "TJSP",
+            "risco": 1,
+            "descricao": "Processo de Ação Penal - Procedimento Sumário com assunto Ameaça."
+        }
+    ]
+}

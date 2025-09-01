@@ -21,62 +21,65 @@ class TJSP_Scraper:
         '''Função para preencher as seções ou foros na página de consulta.'''
         FORO = "Todos os foros"
         try:
+            # Verifica se existe o link "Todos os foros"
             link_foros = page.get_by_role("link", name="Todos os foros")
-            await asyncio.sleep(0.8)
-            if await link_foros.is_visible():
+            if await link_foros.count() > 0 and await link_foros.is_visible():
+                await asyncio.sleep(0.8)
                 await link_foros.click()
                 await page.get_by_role('combobox', name='Foro').fill(FORO[:7])
                 await page.get_by_role('option', name=FORO, exact=True).locator('span').click()
             else:
-                await page.get_by_role("link", name="Todas as seções").click()
-                await page.get_by_role("option", name="Todas as seções").click()
+                # Verifica se existe o link "Todas as seções"
+                link_secoes = page.get_by_role("link", name="Todas as seções")
+                if await link_secoes.count() > 0 and await link_secoes.is_visible():
+                    await link_secoes.click()
+                    await page.get_by_role("option", name="Todas as seções").click()
+                else:
+                    self.logger.info("Nenhum filtro de foro ou seção disponível na página. Prosseguindo sem seleção.")
         except Exception as e:
             self.logger.error(f"Nenhum link de foro ou seção foi encontrado: {e}")
-
+            
     async def _extrair_dados_processos(self, page, grau: int) -> list:
-        '''
-        Nova função para extrair os dados da tabela de processos.
-        Retorna uma lista de dicionários com os detalhes de cada processo.
-        '''
         processos_encontrados = []
         try:
-            # Localiza a tabela de processos e as linhas
-            tabela = page.locator("#resultadosTable")
-            linhas = await tabela.locator("tr.unj-table__row").all()
+            # Aguarda o carregamento da lista de processos
+            await page.wait_for_selector("#listagemDeProcessos a.linkProcesso", timeout=10000)
+            links = await page.locator("#listagemDeProcessos a.linkProcesso").all()
+            for link in links:
+                numero_processo = (await link.inner_text()).strip()
+                div_pai = link.locator("xpath=ancestor::div[contains(@class, 'row')]")
+                # Extrai classe
+                classe = await div_pai.locator(".classeProcesso").inner_text() if await div_pai.locator(".classeProcesso").count() else ""
+                # Extrai assunto
+                assunto = await div_pai.locator(".assuntoPrincipalProcesso").inner_text() if await div_pai.locator(".assuntoPrincipalProcesso").count() else ""
+                # Extrai data de distribuição
+                data_distribuicao = await div_pai.locator(".dataLocalDistribuicaoProcesso").inner_text() if await div_pai.locator(".dataLocalDistribuicaoProcesso").count() else ""
+                # Extrai nome da parte (opcional)
+                nome_parte = await div_pai.locator(".nomeParte").inner_text() if await div_pai.locator(".nomeParte").count() else ""
 
-            for linha in linhas:
-                # Extrai os dados de cada célula da linha
-                colunas = await linha.locator("td").all()
-                if len(colunas) > 0:
-                    numero_processo = await colunas[0].inner_text()
-                    classe = await colunas[1].inner_text()
-                    assunto = await colunas[2].inner_text()
-                    data_distribuicao = await colunas[3].inner_text()
-                    
-                    # Crie a lógica para determinar o risco aqui
-                    # Exemplo simples: Risco mais alto para "criminal"
-                    risco = 0
-                    if "crime" in assunto.lower() or "criminal" in classe.lower():
-                        risco = 5 # Risco alto
-                    elif "execução fiscal" in assunto.lower():
-                        risco = 3 # Risco médio
-                    else:
-                        risco = 1 # Risco baixo
+                # Lógica de risco (ajuste conforme sua regra)
+                risco = 0
+                if "crime" in assunto.lower() or "criminal" in classe.lower():
+                    risco = 5
+                elif "execução fiscal" in assunto.lower():
+                    risco = 3
+                else:
+                    risco = 1
 
-                    processos_encontrados.append({
-                        "numero_processo": numero_processo.strip(),
-                        "grau": grau,
-                        "classe": classe.strip(),
-                        "assunto": assunto.strip(),
-                        "data_distribuicao": data_distribuicao.strip(),
-                        "fonte": "TJSP",
-                        "risco": risco,
-                        "descricao": f"Processo de {classe.strip()} com assunto {assunto.strip()}."
-                    })
-            self.logger.info(f" {len(processos_encontrados)} processo(s) extraído(s) para o {grau}º grau.")
+                processos_encontrados.append({
+                    "numero_processo": numero_processo,
+                    "grau": grau,
+                    "classe": classe,
+                    "assunto": assunto,
+                    "data_distribuicao": data_distribuicao,
+                    "nome_parte": nome_parte,
+                    "fonte": "TJSP",
+                    "risco": risco,
+                    "descricao": f"Processo de {classe} com assunto {assunto}."
+                })
+            self.logger.info(f"{len(processos_encontrados)} processo(s) extraído(s) para o {grau}º grau.")
         except Exception as e:
-            self.logger.error(f"❌ Erro ao extrair dados da tabela: {e}")
-
+            self.logger.error(f"❌ Erro ao extrair dados da lista: {e}")
         return processos_encontrados
 
     async def _consultar_instancia(self, page, tipo, campo, valor, msg_sem_processo, grau) -> bool:
@@ -88,7 +91,7 @@ class TJSP_Scraper:
         await self._preencher_secoes(page)
         await page.get_by_role('button', name='Consultar').click()
         mensagem = page.locator(f"text={msg_sem_processo}")
-        await asyncio.sleep(0.8)
+        await asyncio.sleep(1)
         try:
             await mensagem.wait_for(timeout=4000)
             self.logger.info('Não encontrado processos')
@@ -106,6 +109,7 @@ class TJSP_Scraper:
         URL = "https://esaj.tjsp.jus.br/cpopg/abrirConsultaDeRequisitorios.do"
         await page.goto(URL)
         await page.get_by_label("Consultar por").select_option(tipo)
+        await asyncio.sleep(0.8)
         await page.locator(campo).fill(valor)
         await page.get_by_role('button', name='Consultar').click()
         mensagem = page.locator(f"text={msg_sem_processo}")

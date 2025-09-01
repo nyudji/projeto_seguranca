@@ -35,10 +35,10 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
 │
 ├── referencias         <- Dicionários de dados, manuais e outros materiais explicativos.
 │
-├── relatorios            <- Análises geradas em HTML, PDF, LaTeX, etc.
+├── relatorios            <- Análises geradas em HTML, PDF, etc.
 │   └── figuras        <- Gráficos e figuras geradas para uso nos relatórios.
 │
-├── requirements.txt   <- O arquivo de requisitos para reproduzir o ambiente de análise, por exemplo,
+├── requirements.txt   <- O arquivo de requisitos para reproduzir o ambiente virtual.
 │                      
 │
 ├── setup.cfg          <- Arquivo de configuração para o Flake8.

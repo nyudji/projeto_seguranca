@@ -43,8 +43,8 @@ async def main():
     logging.info("Iniciando a aplicação de scraper do TJSP.")
 
     funcionarios = [
-        {"nome": "João Pereira Amaral de Souza", "cpf": "567.3435.234-03"},
-        {"nome": "Maria Carvalho Pereira de Souza", "cpf": "425.656.323-03"}
+        {"nome": "Mario Andrade da Silva", "cpf": "2323"},
+        {"nome": "Maria Pereira de Souza", "cpf": "425.656.323-03"}
     ]
     #cpf = input("Digite o CPF/CNPJ: ").strip()
     #nome = input("Digite o nome completo: ").strip()
