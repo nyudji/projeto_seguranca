@@ -16,7 +16,7 @@ class TJSP_Scraper:
             "processos": []
         }
         self.tem_processos_encontrados = False
-    
+        
     async def _preencher_secoes(self, page) -> None:
         '''Função para preencher as seções ou foros na página de consulta.'''
         FORO = "Todos os foros"
@@ -83,25 +83,47 @@ class TJSP_Scraper:
         return processos_encontrados
 
     async def _consultar_instancia(self, page, tipo, campo, valor, msg_sem_processo, grau) -> bool:
-        URL = "https://esaj.tjsp.jus.br/esaj/portal.do?servico=190090"
+        URL = "https://esaj.tjsp.jus.br/esaj?servico=190090"
         await page.goto(URL)
-        await page.get_by_role("cell", name=f"Consulta de Processos do {grau}ºGrau Consulta de Processos do {grau}ºGrau").get_by_role("link").click()
+        await page.get_by_role("link", name=f"Consulta de Processos do {grau}º").click()
         await page.get_by_label("Consultar por").select_option(tipo)
         await page.locator(campo).fill(valor)
         await self._preencher_secoes(page)
         await page.get_by_role('button', name='Consultar').click()
         mensagem = page.locator(f"text={msg_sem_processo}")
+        mensagem_muitos = page.locator("text=Foram encontrados muitos processos para os parâmetros informados. Por favor, refine sua busca.")
         await asyncio.sleep(1)
         try:
             await mensagem.wait_for(timeout=4000)
             self.logger.info('Não encontrado processos')
             return False
         except:
-            self.logger.info(f'Processos encontrados para o {grau}º grau. Extraindo dados...')
-            processos = await self._extrair_dados_processos(page, grau)
-            self.resultado["processos"].extend(processos) # Adiciona os processos à lista do objeto
-            self.tem_processos_encontrados = True
-            return True
+        
+            try:
+                # Verifica se apareceu a mensagem de muitos processos
+                await mensagem_muitos.wait_for(timeout=2000)
+                self.logger.info('Muitos processos encontrados, refinando busca para foro "São Paulo"...')
+                # Seleciona o foro "São Paulo" e tenta novamente
+                await page.get_by_role("link", name="Todos os foros").click()
+                await page.get_by_role('combobox', name='Foro').fill("São Paulo")
+                await page.get_by_role('option', name="São Paulo", exact=True).locator('span').click()
+                await page.get_by_role('button', name='Consultar').click()
+                await asyncio.sleep(1)
+                # Tenta extrair processos novamente
+                processos = await self._extrair_dados_processos(page, grau)
+                if processos:
+                    self.resultado["processos"].extend(processos)
+                    self.tem_processos_encontrados = True
+                    return True
+                else:
+                    self.logger.info('Nenhum processo localizado após refinar para foro "São Paulo".')
+                    return False
+            except:
+                self.logger.info(f'Processos encontrados para o {grau}º grau. Extraindo dados...')
+                processos = await self._extrair_dados_processos(page, grau)
+                self.resultado["processos"].extend(processos)
+                self.tem_processos_encontrados = True
+                return True
         finally:
             await asyncio.sleep(0.8)
 
@@ -136,6 +158,7 @@ class TJSP_Scraper:
                 try:
                     if await self._consultar_instancia(page, "DOCPARTE", "#campo_DOCPARTE", self.cpf, "Não existem informações", 1):
                         self.logger.info(f'Processos encontrados para o CPF/CNPJ: {self.cpf}')
+                        await asyncio.sleep(0.8)
                     elif await self._consultar_instancia(page, "NMPARTE", "#campo_NMPARTE", self.nome_completo, "Não existem informações disponíveis para os parâmetros informados.", 1):
                         self.logger.info(f'Processos encontrados para o nome: {self.nome_completo} - 1º grau')
                     else:

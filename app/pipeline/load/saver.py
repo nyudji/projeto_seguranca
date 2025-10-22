@@ -5,7 +5,7 @@ import os
 def save_to_json(data, filename="dados_processados.json"):
     """Salva os dados em um arquivo JSON."""
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    tratado_dir = os.path.join(base_dir, '..', '..', 'dados', 'tratado', 'funcionarios_risco')
+    tratado_dir = os.path.join(base_dir, '..', '..', 'dados', 'bruto', 'tjsp')
     filepath = os.path.join(tratado_dir, filename)
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
@@ -21,7 +21,7 @@ def save_to_csv(data_list, filename="dados_processados.csv"):
     
     # Define o caminho do arquivo (sua lógica de caminho está correta)
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    tratado_dir = os.path.join(base_dir, '..', '..', 'dados', 'tratado', 'funcionarios_risco')
+    tratado_dir = os.path.join(base_dir, '..', '..', 'dados', 'bruto', 'tjsp')
     
     # Cria o diretório se ele não existir
     os.makedirs(tratado_dir, exist_ok=True)
@@ -32,6 +32,7 @@ def save_to_csv(data_list, filename="dados_processados.csv"):
     # Salva no arquivo CSV
     df.to_csv(filepath, index=False, encoding='utf-8')
     print(f"Dados salvos em {filepath}")
+
 
 def save_to_sql(data, connection_string, table_name="processos_funcionarios"):
     """Salva os dados em um banco de dados SQL."""

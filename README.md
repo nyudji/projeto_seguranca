@@ -36,7 +36,7 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
 ├── referencias         <- Dicionários de dados, manuais e outros materiais explicativos.
 │
 ├── relatorios            <- Análises geradas em HTML, PDF, etc.
-│   └── figuras        <- Gráficos e figuras geradas para uso nos relatórios.
+│   └── figuras           <- Gráficos e figuras geradas para uso nos relatórios.
 │
 ├── requirements.txt   <- O arquivo de requisitos para reproduzir o ambiente virtual.
 │                      
@@ -63,7 +63,7 @@ Projeto de estágio focado na criação de uma ferramenta de análise para ident
     │       ├── load            <- Scripts para carregar dados.
     │       └── scripts         <- Arquivos de execuação 
     │
-    ├── modeling                
+    ├── ml                
     │   ├── __init__.py 
     │   ├── predict.py          <- Código para executar inferência com modelos treinados.          
     │   └── train.py            <- Código para treinar modelos.

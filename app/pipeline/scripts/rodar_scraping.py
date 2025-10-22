@@ -4,8 +4,8 @@ import logging
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from pipeline import TJSP_Scraper
-from pipeline.load.saver import save_to_json, save_to_csv, save_to_sql
+from app.pipeline import TJSP_Scraper
+from app.pipeline.load.saver import save_to_json, save_to_csv, save_to_sql
 
 # Configuração de logging
 logging.basicConfig(
@@ -14,19 +14,18 @@ logging.basicConfig(
 )
 
 async def main():
-
     def converter_para_formato_csv(data):
         """Converte os dados extraídos para um formato adequado para CSV.
         """
         registros = []
         nome_funcionario = data.get("funcionario", {}).get("nome", "")
-        cpf_cnpj_funcionario = data.get("funcionario", {}).get("cpf", "")
+        cpf_funcionario = data.get("funcionario", {}).get("cpf", "")
         processos = data.get("processos", [])
         
         for processo in processos:
             registro = {
                 "funcionario_nome": nome_funcionario,
-                "funcionario_cpf_cnpj": cpf_cnpj_funcionario,
+                "funcionario_cpf": cpf_funcionario,
                 "risco": processo.get("risco"),
                 "fonte": processo.get("fonte"),
                 "descricao": processo.get("descricao")
@@ -78,7 +77,6 @@ async def main():
             registros_csv = converter_para_formato_csv(resultado_completo)
             logging.info(f"Registros convertidos para {funcionario['nome']}: {registros_csv}")
             todos_os_registros.extend(registros_csv)
-
 
         # Salva o arquivo CSV consolidado com todos os funcionários
         logging.info(f"Total de registros para o CSV: {len(todos_os_registros)}")
